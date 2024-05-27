@@ -27,7 +27,7 @@ case class Version(parts: List[Int]) {
   }
 
   def toFloat: Float = {
-    val versionString = parts.length match {
+    val versionString = parts.take(3).length match {
       case 1 => parts.head.toString
       case 2 => f"${parts.head.toString}.${parts(1).toString}"
       case 3 => f"${parts.head.toString}.${parts(1).toString}${parts(2).toString}"
